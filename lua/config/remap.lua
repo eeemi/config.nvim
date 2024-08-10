@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>ex", vim.cmd.Ex, { desc = 'E[x]plore (netrw)'})
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz') -- center after moving half page
 vim.keymap.set('n', '<C-u>', '<C-u>zz') -- center after moving half page
