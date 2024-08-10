@@ -15,4 +15,15 @@ return {
         --     desc = "Buffer Local Keymaps (which-key)",
         -- },
     },
+
+    -- ================================================================
+    -- Usage:
+    -- hit one of the keys to open a group or execute a key binding
+    -- <esc> to cancel and close the popup
+    -- <bs> go up one level
+    -- <c-d> scroll down
+    -- <c-u> scroll up
+    -- ================================================================
+
 }
+
