@@ -25,8 +25,9 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     -- import your plugins
-    { import = "lazy-plugins" },
+    -- { import = "lazy-plugins" },
     -- { import = "plugins" },
+    { import = "eemi.plugins" },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.

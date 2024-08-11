@@ -1,4 +1,3 @@
-require("config")
-require("config.lazy")
--- print("hello")
+require("eemi.config")
+require("eemi.lazy")
 
