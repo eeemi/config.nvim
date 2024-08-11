@@ -8,6 +8,8 @@ wk.add({
     { "<leader>e", desc = '[E]xplore (netrw)' },
     { "<leader>f", desc = 'Telescope' },
     { "<leader>h", desc = 'Harpoon' },
+    { "<leader>t", desc = 'Trouble' },
+    -- { "<leader>c", desc = 'Trouble' },
 
   -- DEFAULTS START 
   -- { "<leader>f", group = "file" }, -- group
