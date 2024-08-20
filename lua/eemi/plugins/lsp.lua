@@ -20,9 +20,13 @@ return {
 
         mason.setup()
         mason_lspconfig.setup({
-            ensure_installed = { "lua_ls", },
+            ensure_installed = {
+                "lua_ls",
+                "gopls",
+            },
         })
 
+        -- lspconfig.lua_ls.setup {}
         -- ========================================
         -- lua_ls
         -- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/lua_ls.lua 
@@ -59,7 +63,7 @@ return {
             }
         }
 
-        print("Hello!!!!!")
+        lspconfig.gopls.setup {}
 
         -- -- ========================
         -- -- NOT WORKING
