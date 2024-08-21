@@ -44,16 +44,16 @@ vim.keymap.set('n', '<leader>R', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- surround
 vim.keymap.set('x', '<leader>s{', [[c{ }<C-c>Pa <C-c>]], { desc = 'Surround selection with {}'} )
 vim.keymap.set('x', [[<leader>s(]], [[c()<C-c>P]], { desc = [[Surround selection with ()]]} )
-vim.keymap.set('x', [[<leader>s']], [[c''<C-c>P]], { desc = [[Surround selection with '']]} )
+vim.keymap.set('x', '<leader>s[', 'c[]<C-c>P', { desc = 'Surround selection with []'} )
 vim.keymap.set('x', [[<leader>s']], [[c''<C-c>P]], { desc = [[Surround selection with '']]} )
 vim.keymap.set('x', '<leader>s<', 'c<><C-c>P', { desc = 'Surround selection with <>'} )
 vim.keymap.set('x', '<leader>s"', [[c""<C-c>P]], { desc = 'Surround selection with ""'} )
 
 vim.keymap.set('n', '<leader>s{', [[ciw{ }<C-c>Pa <C-c>$]], { desc = 'Surround word with {}'} )
 vim.keymap.set('n', [[<leader>s(]], [[ciw()<C-c>P]], { desc = [[Surround word with ()]]} )
+vim.keymap.set('n', '<leader>s[', 'ciw[]<C-c>P', { desc = 'Surround word with []'} )
 vim.keymap.set('n', [[<leader>s']], [[ciw''<C-c>P]], { desc = [[Surround word with '']]} )
 vim.keymap.set('n', '<leader>s<', 'ciw<><C-c>P', { desc = 'Surround word with <>'} )
-vim.keymap.set('n', '<leader>s[', 'ciw[]<C-c>P', { desc = 'Surround word with []'} )
 vim.keymap.set('n', '<leader>s"', [[ciw""<C-c>P]], { desc = 'Surround word with ""'} )
 
 -- vim.keymap.set('x', '<leader>s{', [[c{}<C-c>P]], { desc = 'Surround with {}'} )
