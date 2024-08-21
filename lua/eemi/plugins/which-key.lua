@@ -34,6 +34,7 @@ return {
             { "<leader>f", desc = 'Telescope' },
             { "<leader>h", desc = 'Harpoon' },
             { "<leader>t", desc = 'Trouble' },
+            { "<leader>s", desc = 'Surround/Wrap', mode = {"n", "x"}},
             -- { "<leader>c", desc = 'Trouble' },
 
             -- DEFAULTS START 
