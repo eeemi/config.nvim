@@ -62,10 +62,10 @@ vim.keymap.set('n', '<leader>s"', [[ciw""<C-c>P]], { desc = 'Surround word with 
 
 -- !!IMPORTANT: load these last
 -- NOTE: these might cause problems if something uses these symbols in insert mode
-vim.keymap.set('i', '{', '{}<C-c>i') -- auto close brackets
-vim.keymap.set('i', '(', '()<C-c>i') -- auto close parentheses
-vim.keymap.set('i', '[', '[]<C-c>i') -- auto close brackets
+-- vim.keymap.set('i', '{', '{}<C-c>i') -- auto close brackets
+-- vim.keymap.set('i', '(', '()<C-c>i') -- auto close parentheses
+-- vim.keymap.set('i', '[', '[]<C-c>i') -- auto close brackets
 -- vim.keymap.set('i', '<', '<><C-c>i') -- auto close angle brackets
-vim.keymap.set('i', [[']], [[''<C-c>i]]) -- auto close ''
-vim.keymap.set('i', [["]], [[""<C-c>i]]) -- auto close ""
+-- vim.keymap.set('i', [[']], [[''<C-c>i]]) -- auto close ''
+-- vim.keymap.set('i', [["]], [[""<C-c>i]]) -- auto close ""
 
