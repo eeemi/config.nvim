@@ -15,6 +15,7 @@ return {
                 "markdown_inline", -- must be installed
                 "go",
                 "python",
+                "bash",
             },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
