@@ -1,6 +1,7 @@
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
+        "stevearc/conform.nvim",
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
 
@@ -17,9 +18,22 @@ return {
         -- pyright
         -- {'neoclide/coc.nvim', branch= 'release',}
         -- run `:CocInstall coc-pyright`
+
+        "j-hui/fidget.nvim",
     },
 
     config = function()
+        require("conform").setup({
+            formatters_by_ft = {
+                -- lua = { "stylua" },
+                -- -- Conform will run multiple formatters sequentially
+                -- python = { "isort", "black" },
+                -- -- You can customize some of the format options for the filetype (:help conform.format)
+                -- rust = { "rustfmt", lsp_format = "fallback" },
+                -- -- Conform will run the first available formatter
+                -- javascript = { "prettierd", "prettier", stop_after_first = true },
+            },
+        })
 
         local cmp = require('cmp')
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
