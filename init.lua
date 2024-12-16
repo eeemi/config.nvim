@@ -1,3 +1,2 @@
-require("eemi.config")
-require("eemi.lazy")
-
+require('eemi.config')
+require('eemi.lazy')
