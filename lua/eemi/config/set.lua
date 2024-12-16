@@ -1,8 +1,8 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.updatetime = 50
 
+vim.opt.updatetime = 50
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -35,4 +35,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
         vim.highlight.on_yank()
     end,
 })
-

@@ -10,7 +10,7 @@ return {
 
         local wk = require("which-key")
         wk.add({
-            { "<leader>g", desc = '[G]o to' },
+            { "<leader>g", desc = '[G]it' },
             { "<leader>e", desc = '[E]xplore (netrw)' },
             { "<leader>f", desc = 'Telescope' },
             { "<leader>h", desc = '[H]arpoon' },
