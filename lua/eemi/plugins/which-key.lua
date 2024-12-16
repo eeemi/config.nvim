@@ -15,6 +15,7 @@ return {
             { "<leader>f", desc = 'Telescope' },
             { "<leader>h", desc = '[H]arpoon' },
             { "<leader>t", desc = '[T]rouble' },
+            { "gr", desc = '[R]ename' },
 
             -- { "<leader>f", group = "file" }, -- group
             -- { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", mode = "n" },

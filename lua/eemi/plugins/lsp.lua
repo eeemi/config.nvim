@@ -78,7 +78,7 @@ return {
                 end
 
                 map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
-                map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+                map('gR', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
                 map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
                 map('gh', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
                 -- map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')

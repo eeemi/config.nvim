@@ -29,6 +29,11 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]],
     { desc = "[d]elete w/o changing register" }
 ) -- delete without changing the last yank register in *NORMAL* and *VISUAL* mode
 
+-- rename
+vim.keymap.set('n', 'grn', vim.lsp.buf.rename, {desc = "Re[N]ame"})
+-- vim.keymap.set('n', 'gra', vim.lsp.buf.code_action, {desc = "Code [A]ction"})
+-- vim.keymap.set('n', 'grr', vim.lsp.buf.references, {desc = "[R]eferences"})
+
 -- vim.keymap.set('v', '<leader>p', '"+p') -- paste from system clipboard in *VISUAL* mode
 -- vim.keymap.set('v', '<leader>P', '"+P') -- paste from system clipboard in *VISUAL* mode
 -- vim.keymap.set('n', '<leader>p', '"+p') -- paste from system clipboard in *NORMAL* mode
