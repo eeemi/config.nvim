@@ -22,7 +22,13 @@ return {
         "j-hui/fidget.nvim",
     },
 
+    -- TODO: Fix messy structure. Split some of the chunks to their own config files?
+
     config = function()
+        -- ----------------------------------------------------------------
+        -- conform
+        -- ----------------------------------------------------------------
+
         require("conform").setup({
             formatters_by_ft = {
                 -- lua = { "stylua" },
@@ -34,6 +40,10 @@ return {
                 -- javascript = { "prettierd", "prettier", stop_after_first = true },
             },
         })
+
+        -- ----------------------------------------------------------------
+        -- cmp
+        -- ----------------------------------------------------------------
 
         local cmp = require('cmp')
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -69,6 +79,10 @@ return {
                 { name = 'buffer' },
             })
         })
+
+        -- ----------------------------------------------------------------
+        -- LspAttach
+        -- ----------------------------------------------------------------
 
         vim.api.nvim_create_autocmd('LspAttach', {
             group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
@@ -129,7 +143,10 @@ return {
                 end,
             })
 
-            --
+            -- ----------------------------------------------------------------
+            -- mason
+            -- ----------------------------------------------------------------
+
             require("mason").setup()
             require("mason-lspconfig").setup({
                 ensure_installed = {

@@ -2,13 +2,19 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 -- NAVIGATION
-vim.keymap.set("n", "<leader>ex", vim.cmd.Ex, { desc = 'E[x]plore (netrw)'})
-
 vim.keymap.set('n', '<C-d>', '<C-d>zz') -- center after moving half page
 vim.keymap.set('n', '<C-u>', '<C-u>zz') -- center after moving half page
 
+vim.keymap.set("n", "<leader>ex", vim.cmd.Ex, { desc = 'E[x]plore (netrw)' })
+-- vim.keymap.set("n", "<leader>G", ':G<CR>', { desc = 'Fu[G]itive (Git)' })
+
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv") -- Move selection line by line in visual mode
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv") -- Move selection line by line in visual mode
+
+vim.keymap.set('n', '<C-S-Left>', "20<C-w>><CR>") -- Move selection line by line in visual mode
+
+vim.keymap.set('n', ']b', ":bn<CR>", { desc = "next [B]uffer" })
+vim.keymap.set('n', '[b', ":bN<CR>", { desc = "previous [B]uffer" })
 
 -- CLIPBOARD
 vim.keymap.set({'n', 'v'}, '<leader>y', [["+y]], { desc = "[y]ank to system clipboard" }) -- yank to system clipboard in *NORMAL* and *VISUAL* mode
@@ -27,10 +33,15 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]], { desc = "[d]elete w/o changing
 -- BUFFERS
 vim.keymap.set("n", "<leader>B", ':%bd|e#<CR>', { desc = 'Unload [B]uffers except current'})
 
+-- WINDOWS
+vim.keymap.set("n", "<C-W>>", '50<C-w>>', { desc = 'Increase width by 50'})
+vim.keymap.set("n", "<C-W><", '50<C-w><', { desc = 'Decrease width by 50'})
+vim.keymap.set("n", "<C-W>m", ':vert res ', { desc = '[M]odify width'})
+
 -- RENAME
 vim.keymap.set('n', '<leader>r', '*Ncgn', {desc = "[R]ename word, '.' to repeat for next"})
 vim.keymap.set('n', '<leader>R', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace current word in the whole file' })
-vim.keymap.set('n', 'grn', vim.lsp.buf.rename, {desc = "Re[N]ame"})
+vim.keymap.set('n', 'grn', vim.lsp.buf.rename, {desc = "Re[N]ame"}) -- NOTE: can have big impact
 -- vim.keymap.set('n', 'gra', vim.lsp.buf.code_action, {desc = "Code [A]ction"})
 -- vim.keymap.set('n', 'grr', vim.lsp.buf.references, {desc = "[R]eferences"})
 
