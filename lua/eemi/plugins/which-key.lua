@@ -10,12 +10,13 @@ return {
 
         local wk = require("which-key")
         wk.add({
-            { "<leader>g", desc = '[G]it' },
-            { "<leader>e", desc = '[E]xplore (netrw)' },
+            { "<leader>g", desc = '[g]it' },
+            { "<leader>e", desc = '[e]xplore (netrw)' },
             { "<leader>f", desc = 'Telescope' },
-            { "<leader>h", desc = '[H]arpoon' },
-            { "<leader>t", desc = '[T]rouble' },
-            { "gr", desc = '[R]ename' },
+            { "<leader>h", desc = '[h]arpoon' },
+            { "<leader>t", desc = '[t]rouble' },
+            { "<leader>D", desc = '[D]ebugger' },
+            { "gr", desc = '[r]ename' },
 
             -- { "<leader>f", group = "file" }, -- group
             -- { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", mode = "n" },

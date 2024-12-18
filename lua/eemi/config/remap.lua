@@ -13,8 +13,8 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv") -- Move selection line by line in v
 
 vim.keymap.set('n', '<C-S-Left>', "20<C-w>><CR>") -- Move selection line by line in visual mode
 
-vim.keymap.set('n', ']b', ":bn<CR>", { desc = "next [B]uffer" })
-vim.keymap.set('n', '[b', ":bN<CR>", { desc = "previous [B]uffer" })
+vim.keymap.set('n', ']b', ":bn<CR>", { desc = "next [b]uffer" })
+vim.keymap.set('n', '[b', ":bN<CR>", { desc = "previous [b]uffer" })
 
 -- CLIPBOARD
 vim.keymap.set({'n', 'v'}, '<leader>y', [["+y]], { desc = "[y]ank to system clipboard" }) -- yank to system clipboard in *NORMAL* and *VISUAL* mode
@@ -36,7 +36,7 @@ vim.keymap.set("n", "<leader>B", ':%bd|e#<CR>', { desc = 'Unload [B]uffers excep
 -- WINDOWS
 vim.keymap.set("n", "<C-W>>", '50<C-w>>', { desc = 'Increase width by 50'})
 vim.keymap.set("n", "<C-W><", '50<C-w><', { desc = 'Decrease width by 50'})
-vim.keymap.set("n", "<C-W>m", ':vert res ', { desc = '[M]odify width'})
+vim.keymap.set("n", "<C-W>m", ':vert res ', { desc = '[m]odify width'})
 
 -- RENAME
 vim.keymap.set('n', '<leader>r', '*Ncgn', {desc = "[R]ename word, '.' to repeat for next"})
