@@ -42,6 +42,10 @@ vim.keymap.set("n", "<C-W>>", '50<C-w>>', { desc = 'Increase width by 50'})
 vim.keymap.set("n", "<C-W><", '50<C-w><', { desc = 'Decrease width by 50'})
 vim.keymap.set("n", "<C-W>m", ':vert res ', { desc = '[m]odify width'})
 
+-- GENERATION
+vim.keymap.set("n", "<leader>G", [[q:iput=range()->join(', ')<Esc>F)i<C-c>]], { desc = '[G]enerate sequence'})
+-- vim.keymap.set("n", "<leader>G", [[:put=range()->join(', ')]], { desc = '[G]enerate sequence'}) -- use this with vscode emulation instead
+
 -- RENAME
 vim.keymap.set('n', '<leader>r', '*Ncgn', {desc = "[R]ename word, '.' to repeat for next"})
 vim.keymap.set('x', '<leader>r', [[y/<C-r>"<CR>Ncgn]], {desc = "[R]ename word, '.' to repeat for next"}) -- TODO: better way to do it? update <pattern> inline?
