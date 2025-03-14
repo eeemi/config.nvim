@@ -16,6 +16,10 @@ vim.keymap.set('n', '<C-S-Left>', "20<C-w>><CR>") -- Move selection line by line
 vim.keymap.set('n', ']b', ":bn<CR>", { desc = "next [b]uffer" })
 vim.keymap.set('n', '[b', ":bN<CR>", { desc = "previous [b]uffer" })
 
+-- move between spaces in command mode
+vim.keymap.set('c', '<A-b>', "<C-Left>")
+vim.keymap.set('c', '<A-f>', "<C-Right>")
+
 -- CLIPBOARD
 vim.keymap.set({'n', 'v'}, '<leader>y', [["+y]], { desc = "[y]ank to system clipboard" }) -- yank to system clipboard in *NORMAL* and *VISUAL* mode
 vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = "[Y]ank to system clipboard" }) -- yank cursor=>EOL to system clipboard in *NORMAL* mode
