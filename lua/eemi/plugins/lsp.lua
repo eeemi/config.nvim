@@ -247,7 +247,24 @@ return {
 
                     end,
 
-                }
-            })
+                    -- source: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#clangd
+                    ["clangd"] = function ()
+                        local lspconfig = require("lspconfig")
+                        lspconfig.clangd.setup({
+                            capabilities = {
+                                offsetEncoding = { "utf-8", "utf-16" },
+                                textDocument = {
+                                    completion = {
+                                        editsNearCursor = true
+                                    }
+                                }
+                            },
+                            cmd = { "clangd" },
+                            filetypes = { "c", "cc", "cpp", "objc", "objcpp", "cuda", "proto" },
+                        })
+                    end,
+
+                    }
+                })
         end,
     }
