@@ -156,6 +156,12 @@ return {
             -- e.g. 80 to position at column 80, see `:h nvim_buf_set_extmark()`
         })
 
+        -- re-enable inline diagnostics
+        -- NOTE: might cause problems with dap related virtual texts
+        vim.diagnostic.config({
+            virtual_text = true,
+        })
+
         -- ----------------------------------------------------------------
         -- mason_nvim_dap setup
         -- ----------------------------------------------------------------
