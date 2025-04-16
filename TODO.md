@@ -7,6 +7,7 @@
 - [x] support for DAP (debugging protocol)
     - [x] dap-go support and setup 
     - [x] color code e.g. the current line or better looking highlighting
+    - [ ] persistent breakpoints
 - [x] support for c++ debugging
     - [ ] make configuration for c++ debuggers simpler
 - [ ] check out [blink.cmp](https://github.com/Saghen/blink.cmp) 
