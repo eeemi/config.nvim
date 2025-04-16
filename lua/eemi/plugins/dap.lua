@@ -250,41 +250,10 @@ return {
         -- c++ debugging
         -- ----------------------------------------------------------------
 
-        -- -- too complicated to make work. The `./grading` bin needs to be run in the dir it's in so absolute paths won't work
-        -- -- compile c++ ppc keymap
-        -- local function compile_cc()
-        --     local compile_path = vim.fn.getcwd() .. '/' .. vim.split(vim.fn.expand('%'), '/')[1]
-        --     -- local compile_file = vim.split(vim.fn.expand('%'), '/')[2]
-        --     local compile_split = vim.split(vim.fn.expand('%'), '/')
-        --     local compile_file = compile_split[2]
-        --     local compile_bin = compile_split[1]
-        --     -- vim.fn.writefile({compile_file}, '/tmp/dap-log.txt')
-        --     local compile_cmd = 
-        --     "g++ -std=c++2a -Wall -Wextra -Wvla -Werror -Wno-error=unknown-pragmas -Wno-error=unused-but-set-variable -Wno-error=unused-local-typedefs -Wno-error=unused-function -Wno-error=unused-label -Wno-error=unused-value -Wno-error=unused-variable -Wno-error=unused-parameter -Wno-error=unused-but-set-parameter -Wno-psabi -march=native -fdiagnostics-color=never -iquote /home/eemi/courses/01_ppc/cp1/.ppc/ppccp/include " ..
-        --     "-iquote " .. compile_path .. '/.ppc/ppcgrader/include ' ..
-        --     "-DPPC_ALLOW_FLOAT=0 -fno-tree-vectorize " ..
-        --     "-g " .. compile_path .. "/.ppc/ppccp/tester.cc " .. compile_path .. "/" .. compile_file .. " " ..
-        --     "-o " .. compile_path .. "/" .. compile_bin
-        --     vim.fn.writefile({compile_cmd}, '/tmp/dap-log.txt')
-        --     -- local compile_bin = vim.fn.getcwd() .. '/' .. vim.fn.expand('%')
-        --     -- vim.fn.system('touch ' .. compile_path .. '/testFile123')
-        --     -- vim.fn.system('.' .. compile_path .. '/grading compile-debug')
-        --     vim.fn.system(compile_cmd)
-        --     return
-        -- end
-        -- vim.keymap.set("n", "<leader>Dc", compile_cc, {desc = "[c]ompile"})
-
-
         local function load_debug_config()
             local path = vim.fn.getcwd() .. '/' .. vim.split(vim.fn.expand('%'), '/')[1]
-            -- local path = vim.fn.expand('%')
-            -- vim.fn.writefile({vim.inspect(path)}, '/tmp/dap-log.txt')
             vim.fn.writefile({path}, '/tmp/dap-log.txt')
-            -- return nil
 
-            -- log_dap(path)
-            -- local path = vim.fn.getcwd() .. '/' .. vim.split(vim.fn.expand('%'), '/')[1] .. '/'
-            -- local path = vim.fn.getcwd() .. '/' .. vim.split(vim.fn.expand('%'), '/')[1] .. '/debug.json'
             local configPath = plenary_path:new(path, 'debug.json')
 
             if not configPath:exists() then
@@ -333,16 +302,6 @@ return {
                 -- 
                 program = function()
                     local path = vim.split(vim.fn.expand('%'), '%.')[1]
-                    -- local path = vim.fn.input({
-                    --     prompt = vim.split(vim.fn.expand('%'), '%.')[1] .. " =====",
-                    --     -- prompt = vim.fn.getcwd() .. '/' .. vim.split(vim.fn.expand('%'), '.')[1] .. "/  =====",
-                    --     -- prompt = vim.fn.getcwd() .. '/' .. vim.split(vim.fn.expand('%'), '/')[1] .. "/  =====",
-                    --     -- prompt = vim.fn.expand('%') .. "=====",
-                    --     -- prompt = load_debug_config(),
-                    --     -- prompt = 'Path to executable: ',
-                    --     default = vim.fn.getcwd() .. '/',
-                    --     completion = 'file'
-                    -- })
                     return (path and path ~= "") and path or dap.ABORT
                 end,
 
@@ -355,10 +314,7 @@ return {
                     if config == nil then
                         return nil
                     end
-                    -- vim.fn.writefile({testPath .. '/' .. config.test}, '/tmp/dap-log.txt')
-                    -- return vim.fn.input('Path to test: ', "", "file")
                     -- return vim.fn.input('Path to test: ', "tests/", "file")
-                    -- return vim.fn.input('Path to test: ', path .. "/tests/", "file")
                     -- return vim.fn.input(config.test, path .. "/tests/", "file")
                     return testPath .. '/' .. config.test
                 end },
@@ -366,6 +322,10 @@ return {
                 -- externalConsole = true,
             },
         }
+
+        dap.configurations.h = dap.configurations.cpp
+        dap.configurations.cc = dap.configurations.cpp
+        dap.configurations.c = dap.configurations.cpp
 
         -- dap.adapters.codelldb = {
         --     type = "server",
@@ -388,11 +348,6 @@ return {
         --         stopOnEntry = true,
         --     },
         -- }
-
-        dap.configurations.h = dap.configurations.cpp
-        dap.configurations.cc = dap.configurations.cpp
-        dap.configurations.c = dap.configurations.cpp
-
 
     end,
 }
