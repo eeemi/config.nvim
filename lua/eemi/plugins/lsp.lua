@@ -261,6 +261,12 @@ return {
                             },
                             cmd = { "clangd" },
                             filetypes = { "c", "cc", "cpp", "objc", "objcpp", "cuda", "proto" },
+                            -- from here: https://www.reddit.com/r/neovim/comments/127pv2v/clangd_diagnostics/
+                            -- > [!quote]
+                            -- > "150 is supposed to be the default debounce time anyway but this fixed it for me, now I get nice and fast diagnostics when I exit Insert mode."
+                            flags = {
+                                debounce_text_changes = 150,
+                            },
                         })
                     end,
 
