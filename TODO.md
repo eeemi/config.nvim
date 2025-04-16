@@ -3,9 +3,6 @@
 - [ ] refactor 'nvim-lspconfig' into 'vim.lsp.config'
     - [REASON](https://www.reddit.com/r/neovim/comments/1jxv6c0/nvimlspconfig_has_now_migrated_to_use_the_new/)
     - [more info](https://github.com/neovim/nvim-lspconfig/commit/81a570f58b2113cc2d538efae743ad38d6ab564f)
-- [ ] check out [blink.cmp](https://github.com/Saghen/blink.cmp)
-    - this would replace 'nvim-cmp'
-        - 'blink.cmp' vs 'nvim-cmp'?
 - [x] support for DAP (debugging protocol)
     - [x] dap-go support and setup 
     - [x] color code e.g. the current line or better looking highlighting
@@ -14,6 +11,10 @@
     - [ ] make configuration for c++ debuggers simpler
 - [ ] `<leader>r` keymap in visual mode doesn't work with some characters
 - [ ] make a minimal version of the current setup
+- [x] check out [blink.cmp](https://github.com/Saghen/blink.cmp)
+    - this would replace 'nvim-cmp'
+        - 'blink.cmp' vs 'nvim-cmp'?
+            - 'blink.cmp' installed, has cleaner installation
 - [x] [treesitter context](https://github.com/nvim-treesitter/nvim-treesitter-context)
 - [x] ["Tiny plugin to quickly switch python virtual environments from within neovim without restarting."](https://github.com/AckslD/swenv.nvim)
     - not needed for now
