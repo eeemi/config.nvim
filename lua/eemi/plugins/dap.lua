@@ -119,6 +119,8 @@ return {
         -- ----------------------------------------------------------------
 
         -- from https://github.com/theHamsta/nvim-dap-virtual-text
+        -- NOTE: this block seems to disable inline diagnostics
+        -- to manually enable them, run `lua vim.diagnostic.config({ virtual_text = true })`
         nvim_dap_virtual_text.setup({
             enabled = true,                        -- enable this plugin (the default)
             enabled_commands = true,               -- create commands DapVirtualTextEnable, DapVirtualTextDisable, DapVirtualTextToggle, (DapVirtualTextForceRefresh for refreshing when debug adapter did not notify its termination)
