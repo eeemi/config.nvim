@@ -28,7 +28,7 @@ vim.keymap.set('n', '<leader>yy', [[_"+y$]], { desc = "[y]ank line to system cli
 -- vim.keymap.set('n', '<leader>p', '"_dP') -- paste without changing the last yank register (useful for 'find and replacing')
 vim.keymap.set('x', '<leader>p', [["_P]], { desc = "[p]aste w/o changing register" }) -- paste without changing the last yank register (useful for 'find and replacing')
 vim.keymap.set({"n", "v"}, '<leader>P', [["+P]], { desc = "[P]aste from system register"})
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]], { desc = "[d]elete w/o changing register" }) -- delete without changing the last yank register in *NORMAL* and *VISUAL* mode
+vim.keymap.set({"n", "v"}, "<leader>D", [["_d]], { desc = "[D]elete w/o changing register" }) -- delete without changing the last yank register in *NORMAL* and *VISUAL* mode
 -- vim.keymap.set('v', '<leader>p', '"+p') -- paste from system clipboard in *VISUAL* mode
 -- vim.keymap.set('v', '<leader>P', '"+P') -- paste from system clipboard in *VISUAL* mode
 -- vim.keymap.set('n', '<leader>p', '"+p') -- paste from system clipboard in *NORMAL* mode
