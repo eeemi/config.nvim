@@ -28,8 +28,7 @@ return {
         -- dap/ui setup
         -- ----------------------------------------------------------------
 
-        -- dapui.setup()
-        dapui.setup({
+        local dapuiConfig = {
             controls = {
                 icons = {
                     disconnect = " (C-F5)",
@@ -43,7 +42,18 @@ return {
                     terminate = " (S-F5)"
                 }
             },
-        })
+            mappings = {
+                edit = "e",
+                expand = { "<CR>", "<2-LeftMouse>" },
+                open = "o",
+                remove = "d",
+                repl = "r",
+                toggle = "t"
+            },
+        }
+        dapui.setup(dapuiConfig)
+
+        -- ---
 
         dap.listeners.before.attach.dapui_config = function()
             dapui.open()
@@ -59,7 +69,8 @@ return {
         end
 
         -- from `:h dap-mappings`
-        vim.keymap.set({'n', 'v'}, "<leader>De", function() require("dapui").eval() end, {desc = "[e]val virtual text"})
+        vim.keymap.set('n', '<leader>Da', function() print(vim.inspect(dapuiConfig.mappings)) end, {desc = "available [a]ctions"})
+        vim.keymap.set({'n', 'v'}, '<leader>DK', function() dapui.eval() end, {desc = "eval virtual text"})
         vim.keymap.set('n', '<leader>Dt', function() dapui.toggle({}) end, {desc = "[t]oggle UI"})
         vim.keymap.set('n', '<leader>Ds', function() dap.continue() end, {desc = "[S]tart (F5)"})
         vim.keymap.set('n', '<F5>', function() dap.continue() end, {desc = "Start (F5)"})
