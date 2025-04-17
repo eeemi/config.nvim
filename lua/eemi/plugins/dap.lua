@@ -117,7 +117,7 @@ return {
         end
 
         -- from `:h dap-mappings`
-        vim.keymap.set('n', '<leader>dc', function() vim.cmd("DapVirtualTextForceRefresh") end, {desc = "[c]lear dap virtual text"}) -- HACK: If debug adapter fails to notify its termination and leaves lingering dap virtual text, this can be used.
+        vim.keymap.set('n', '<leader>dl', function() vim.cmd("DapVirtualTextForceRefresh") end, {desc = "c[l]ear dap virtual text"}) -- HACK: If debug adapter fails to notify its termination and leaves lingering dap virtual text, this can be used.
         vim.keymap.set('n', '<leader>db', function() dap.clear_breakpoints() end, {desc = "clear [b]reakpoints"})
         vim.keymap.set('n', '<leader>da', function() print(vim.inspect(dapuiConfig.mappings)) end, {desc = "available [a]ctions"})
         vim.keymap.set({'n', 'v'}, '<leader>dK', function() dapui.eval() end, {desc = "eval virtual text"})
