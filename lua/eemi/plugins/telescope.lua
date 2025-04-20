@@ -49,6 +49,12 @@ config = function()
     vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live [g]rep' })
     vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope [b]uffers' })
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope [h]elp tags' })
+    vim.keymap.set('n', '<leader>ft', builtin.treesitter, { desc = 'Telescope [t]reesitter' })
+    -- vim.keymap.set('n', '<leader>fr', builtin.lsp_references, { desc = 'Telescope [r]eferences' })
+    vim.keymap.set('n', '<leader>fs', builtin.lsp_document_symbols, { desc = 'Telescope [s]ymbols' })
+    vim.keymap.set('n', '<leader>fS', builtin.lsp_workspace_symbols, { desc = 'Telescope workspace [S]ymbols' })
+    vim.keymap.set('n', '<leader>fD', builtin.lsp_dynamic_workspace_symbols, { desc = 'Telescope [D]ynamic workspace symbols' })
+    -- vim.keymap.set('n', '<leader>ft', vim.cmd('TodoTelescope') { desc = 'Telescope [T]odo list' }) -- FIXME: how to call `TodoTelescope`
 
     end,
 }

@@ -17,6 +17,7 @@ return {
             { "<leader>h", desc = '[h]arpoon' },
             { "<leader>t", desc = '[t]rouble' },
             { "<leader>d", desc = '[d]ebugger' },
+            { "<leader>c", desc = '[c]ode' },
             { "gr", desc = '[r]ename' },
 
             -- { "<leader>f", group = "file" }, -- group

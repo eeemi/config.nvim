@@ -57,10 +57,9 @@ return {
                 map('gI', require('telescope.builtin').lsp_implementations, '[g]oto [I]mplementation')
                 map('gh', require('telescope.builtin').lsp_type_definitions, 'Type Definition')
                 -- map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
-                map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[d]ocument [s]ymbols')
+                -- map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[d]ocument [s]ymbols')
                 -- map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
                 -- map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-                -- map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
                 map('<leader>ca', vim.lsp.buf.code_action, '[c]ode [a]ction')
                 map('gD', vim.lsp.buf.declaration, '[g]oto [D]eclaration')
 
