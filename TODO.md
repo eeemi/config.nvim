@@ -1,5 +1,6 @@
 # TODO
 
+- [ ] lsp floating window resize/options configuration
 - [ ] refactor 'nvim-lspconfig' into 'vim.lsp.config'
     - [REASON](https://www.reddit.com/r/neovim/comments/1jxv6c0/nvimlspconfig_has_now_migrated_to_use_the_new/)
     - [more info](https://github.com/neovim/nvim-lspconfig/commit/81a570f58b2113cc2d538efae743ad38d6ab564f)
