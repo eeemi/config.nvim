@@ -4,11 +4,17 @@
 - [ ] refactor 'nvim-lspconfig' into 'vim.lsp.config'
     - [REASON](https://www.reddit.com/r/neovim/comments/1jxv6c0/nvimlspconfig_has_now_migrated_to_use_the_new/)
     - [more info](https://github.com/neovim/nvim-lspconfig/commit/81a570f58b2113cc2d538efae743ad38d6ab564f)
-- [ ] [Check out this.](https://github.com/GCBallesteros/NotebookNavigator.nvim)
-    - Would be very nice for Python developing.
-    - There also [this](https://github.com/benlubas/molten-nvim/blob/main/docs/Notebook-Setup.md)
-        - seems like a lot of hassle.
-            - If using notebooks, maybe it's just better to use VSCode (for now).
+- [ ] Maybe just easier to setup [iron.nvim](https://github.com/Vigemus/iron.nvim) and configure yourself
+    - Also check out these:
+    - [ ] [jupyter-vim](https://github.com/jupyter-vim/jupyter-vim)
+    - [ ] [nvim-jupyter-client](https://github.com/geg2102/nvim-jupyter-client)
+        - [ ] Maybe this also? [nvim-python-repl](https://github.com/geg2102/nvim-python-repl)
+    - Use IPython instead of base Python?
+    - ~[Check out this.](https://github.com/GCBallesteros/NotebookNavigator.nvim)~
+        - ~Would be very nice for Python developing.~
+        - ~There also [this](https://github.com/benlubas/molten-nvim/blob/main/docs/Notebook-Setup.md)~
+            - ~seems like a lot of hassle.~
+                - ~If using notebooks, maybe it's just better to use VSCode (for now).~
 - [x] support for DAP (debugging protocol)
     - [x] dap-go support and setup 
     - [x] color code e.g. the current line or better looking highlighting
