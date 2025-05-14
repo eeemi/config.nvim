@@ -348,6 +348,7 @@ return {
         dap.configurations.h = dap.configurations.cpp
         dap.configurations.cc = dap.configurations.cpp
         dap.configurations.c = dap.configurations.cpp
+        dap.configurations.cuda = dap.configurations.cpp
 
         -- dap.adapters.codelldb = {
         --     type = "server",

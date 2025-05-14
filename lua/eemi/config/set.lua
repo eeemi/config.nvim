@@ -38,7 +38,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- local options for `c` filetypes
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'c', 'cpp', 'cc' },
+  pattern = { 'c', 'cpp', 'cc', 'cu', 'cuda' },
   callback = function()
     vim.opt_local.shiftwidth = 2
     vim.opt_local.softtabstop = 2
