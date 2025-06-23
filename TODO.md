@@ -4,7 +4,10 @@
 - [ ] refactor 'nvim-lspconfig' into 'vim.lsp.config'
     - [REASON](https://www.reddit.com/r/neovim/comments/1jxv6c0/nvimlspconfig_has_now_migrated_to_use_the_new/)
     - [more info](https://github.com/neovim/nvim-lspconfig/commit/81a570f58b2113cc2d538efae743ad38d6ab564f)
-- [ ] Maybe just easier to setup [iron.nvim](https://github.com/Vigemus/iron.nvim) and configure yourself
+- [x] Maybe just easier to setup [iron.nvim](https://github.com/Vigemus/iron.nvim) and configure yourself
+    - [ ] is there a way to include images, e.g., `matplotlib` plots? 
+    - [ ] cell runtime counter in repl?
+        - maybe with the the plugins mentioned below?
     - Also check out these:
     - [ ] [jupyter-vim](https://github.com/jupyter-vim/jupyter-vim)
     - [ ] [nvim-jupyter-client](https://github.com/geg2102/nvim-jupyter-client)
