@@ -16,7 +16,7 @@ return {
             { "<leader>f", desc = 'Telescope' },
             { "<leader>h", desc = '[h]arpoon' },
             { "<leader>t", desc = '[t]rouble' },
-            { "<leader>d", desc = '[d]ebugger' },
+            { "<leader>D", desc = '[D]ebugger' },
             { "<leader>c", desc = '[c]ode' },
             { "<leader>i", desc = '[i]ron' },
             { "gr", desc = '[r]ename' },

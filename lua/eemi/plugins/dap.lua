@@ -117,12 +117,12 @@ return {
         end
 
         -- from `:h dap-mappings`
-        vim.keymap.set('n', '<leader>dl', function() vim.cmd("DapVirtualTextForceRefresh") end, {desc = "c[l]ear dap virtual text"}) -- HACK: If debug adapter fails to notify its termination and leaves lingering dap virtual text, this can be used.
-        vim.keymap.set('n', '<leader>db', function() dap.clear_breakpoints() end, {desc = "clear [b]reakpoints"})
-        vim.keymap.set('n', '<leader>da', function() print(vim.inspect(dapuiConfig.mappings)) end, {desc = "available [a]ctions"})
-        vim.keymap.set({'n', 'v'}, '<leader>dK', function() dapui.eval() end, {desc = "eval virtual text"})
-        vim.keymap.set('n', '<leader>dt', function() dapui.toggle({}) end, {desc = "[t]oggle UI"})
-        vim.keymap.set('n', '<leader>ds', function() dap.continue() end, {desc = "[S]tart (F5)"})
+        vim.keymap.set('n', '<leader>Dl', function() vim.cmd("DapVirtualTextForceRefresh") end, {desc = "c[l]ear dap virtual text"}) -- HACK: If debug adapter fails to notify its termination and leaves lingering dap virtual text, this can be used.
+        vim.keymap.set('n', '<leader>Db', function() dap.clear_breakpoints() end, {desc = "clear [b]reakpoints"})
+        vim.keymap.set('n', '<leader>Da', function() print(vim.inspect(dapuiConfig.mappings)) end, {desc = "available [a]ctions"})
+        vim.keymap.set({'n', 'v'}, '<leader>DK', function() dapui.eval() end, {desc = "eval virtual text"})
+        vim.keymap.set('n', '<leader>Dt', function() dapui.toggle({}) end, {desc = "[t]oggle UI"})
+        vim.keymap.set('n', '<leader>Ds', function() dap.continue() end, {desc = "[S]tart (F5)"})
         vim.keymap.set('n', '<F5>', function() dap.continue() end, {desc = "Start (F5)"})
         vim.keymap.set('n', '<F17>', function() dap.terminate() end, {desc = "Terminate <S-F5>"})
         vim.keymap.set('n', '<F9>', function() dap.run_last() end)
@@ -133,15 +133,15 @@ return {
         vim.keymap.set('n', '<F29>', function() dap.disconnect() end, {desc = "Disconnect (Ctrl+F5)"}) -- is this needed?
         -- vim.keymap.set('n', '<F41>', function() dap.restart() end, {desc = "Restart (C-S-F5)"}) -- is this needed?
         vim.keymap.set('n', '<leader>b', function() dap.toggle_breakpoint() end, {desc = 'Toggle [b]reakpoint'})
-        vim.keymap.set('n', '<leader>dB', function() dap.set_breakpoint() end, {desc = 'Set [B]reakpoint'})
-        vim.keymap.set('n', '<leader>dp', function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
-        vim.keymap.set('n', '<leader>dr', function() dap.repl.open() end, {desc = 'Open [R]epl'})
-        -- vim.keymap.set('n', '<leader>dl', function() dap.run_last() end)
-        vim.keymap.set({'n', 'v'}, '<leader>dh', function() dapui_widgets.hover() end, {desc = '[H]over widgets'})
-        vim.keymap.set({'n', 'v'}, '<leader>dp', function() dapui_widgets.preview() end, {desc = '[P]review widgets'})
-        vim.keymap.set('n', '<leader>df', function() local widgets = dapui_widgets widgets.centered_float(widgets.frames) end,
+        vim.keymap.set('n', '<leader>DB', function() dap.set_breakpoint() end, {desc = 'Set [B]reakpoint'})
+        vim.keymap.set('n', '<leader>Dp', function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
+        vim.keymap.set('n', '<leader>Dr', function() dap.repl.open() end, {desc = 'Open [R]epl'})
+        -- vim.keymap.set('n', '<leader>Dl', function() dap.run_last() end)
+        vim.keymap.set({'n', 'v'}, '<leader>Dh', function() dapui_widgets.hover() end, {desc = '[H]over widgets'})
+        vim.keymap.set({'n', 'v'}, '<leader>Dp', function() dapui_widgets.preview() end, {desc = '[P]review widgets'})
+        vim.keymap.set('n', '<leader>Df', function() local widgets = dapui_widgets widgets.centered_float(widgets.frames) end,
         {desc = 'Centered float (frames)'})
-        vim.keymap.set('n', '<leader>ds', function() local widgets = dapui_widgets widgets.centered_float(widgets.scopes) end,
+        vim.keymap.set('n', '<leader>Ds', function() local widgets = dapui_widgets widgets.centered_float(widgets.scopes) end,
         {desc = 'Centered float (scopes)'})
 
         -- from (here)[https://www.lazyvim.org/extras/dap/core]. Same [here](https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/extras/dap/core.lua)
