@@ -60,7 +60,39 @@ vim.keymap.set('n', 'grn', vim.lsp.buf.rename, {desc = "Re[N]ame"}) -- NOTE: can
 -- vim.keymap.set('n', 'gra', vim.lsp.buf.code_action, {desc = "Code [A]ction"})
 -- vim.keymap.set('n', 'grr', vim.lsp.buf.references, {desc = "[R]eferences"})
 
--- AUTOCOMPLETE -- NOTE: this should be at bottom of this file
+-- AUTO DELETION
+--
+-- EXAMPLE: 
+-- If in insert mode between quotation marks `""`, 
+-- pressing back space removes both characters.
+--
+vim.keymap.set('i', '<BS>', function ()
+    local line = vim.fn.getline(".")
+    local col = vim.fn.col(".")
+    if 1 < col and col <= #line then
+        local pair = line:sub(col-1, col)
+        if
+            pair == [[""]] or
+            pair == [['']] or
+            pair == [[``]] or
+            pair == [[<>]] or
+            pair == [[()]] or
+            pair == [[{}]] or
+            pair == '[]'
+            then
+                return [[<Del><BS>]]
+            end
+        end
+        return [[<BS>]]
+    end, { expr = true }
+)
+
+-- NOTE: 
+-- ====================================================================================
+-- everything after this line should be at the bottom in this file, in this order
+-- ====================================================================================
+
+-- AUTOCOMPLETE
 vim.keymap.set('i', '(', '()<Left>')
 vim.keymap.set('i', '[', '[]<Left>')
 vim.keymap.set('i', '{', '{}<Left>')
