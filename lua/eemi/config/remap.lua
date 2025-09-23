@@ -60,3 +60,11 @@ vim.keymap.set('n', 'grn', vim.lsp.buf.rename, {desc = "Re[N]ame"}) -- NOTE: can
 -- vim.keymap.set('n', 'gra', vim.lsp.buf.code_action, {desc = "Code [A]ction"})
 -- vim.keymap.set('n', 'grr', vim.lsp.buf.references, {desc = "[R]eferences"})
 
+-- AUTOCOMPLETE -- NOTE: this should be at bottom of this file
+vim.keymap.set('i', '(', '()<Left>')
+vim.keymap.set('i', '[', '[]<Left>')
+vim.keymap.set('i', '{', '{}<Left>')
+vim.keymap.set('i', [[']], [[''<Left>]])
+vim.keymap.set('i', [["]], [[""<Left>]])
+vim.keymap.set('i', [[`]], [[``<Left>]])
+
