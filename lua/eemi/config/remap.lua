@@ -100,3 +100,44 @@ vim.keymap.set('i', [[']], [[''<Left>]])
 vim.keymap.set('i', [["]], [[""<Left>]])
 vim.keymap.set('i', [[`]], [[``<Left>]])
 
+-- AUTOSKIP 
+local chars = {
+    ['"'] = '"',
+    ["'"] = "'",
+    ["`"] = "`",
+    ["("] = ")",
+    ["["] = "]",
+    ["{"] = "}",
+}
+for first, last in pairs(chars) do
+    vim.keymap.set("i", first, function()
+        local line = vim.fn.getline(".")
+        local col = vim.fn.col(".")
+        -- If cursor is before a closing quote of the same type, skip it
+        -- BUG: possible bug
+        -- Why does `first == last` pass the first if???
+        if first == last and col <= #line and line:sub(col, col) == last then
+            return "<Right>"
+        end
+        -- If it's a quote, insert both
+        if first == last then
+            return first .. last .. "<Left>"
+        end
+        -- Otherwise (brackets/braces/parens), insert first+last
+        return first .. last .. "<Left>"
+    end, { expr = true })
+    -- For asymmetric pairs (brackets/braces/parens), add skip logic
+    if first ~= last then
+        vim.keymap.set("i", last, function()
+            local col = vim.fn.col(".")
+            local line = vim.fn.getline(".")
+            if col <= #line and line:sub(col, col) == last then
+                return "<Right>"
+            else
+                return last
+            end
+        end, { expr = true })
+    end
+end
+
+
