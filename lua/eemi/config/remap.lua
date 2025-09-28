@@ -96,14 +96,14 @@ vim.keymap.set('i', '<BS>', function ()
 vim.keymap.set('i', '(', '()<Left>')
 vim.keymap.set('i', '[', '[]<Left>')
 vim.keymap.set('i', '{', '{}<Left>')
-vim.keymap.set('i', [[']], [[''<Left>]])
+-- vim.keymap.set('i', [[']], [[''<Left>]])
 vim.keymap.set('i', [["]], [[""<Left>]])
 vim.keymap.set('i', [[`]], [[``<Left>]])
 
 -- AUTOSKIP 
 local chars = {
     ['"'] = '"',
-    ["'"] = "'",
+    -- ["'"] = "'",
     ["`"] = "`",
     ["("] = ")",
     ["["] = "]",
