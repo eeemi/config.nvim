@@ -46,6 +46,7 @@ config = function()
 
     local builtin = require('telescope.builtin')
     vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find [f]iles' })
+    vim.keymap.set('n', '<leader>fF', function() builtin.find_files({ hidden = true, no_ignore = true })  end, { desc = 'Telescope find [F]iles (hidden)' })
     vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live [g]rep' })
     vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope [b]uffers' })
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope [h]elp tags' })
@@ -55,6 +56,7 @@ config = function()
     vim.keymap.set('n', '<leader>fS', builtin.lsp_workspace_symbols, { desc = 'Telescope workspace [S]ymbols' })
     vim.keymap.set('n', '<leader>fD', builtin.lsp_dynamic_workspace_symbols, { desc = 'Telescope [D]ynamic workspace symbols' })
     vim.keymap.set('n', '<leader>ft', [[:TodoTelescope<CR>]], { desc = 'Telescope [T]odo list' })
+    vim.keymap.set('n', '<leader>fm', builtin.man_pages, { desc = 'Telescope [m]an pages' })
 
     end,
 }
