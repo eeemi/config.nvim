@@ -372,5 +372,42 @@ return {
         --     },
         -- }
 
+        -- ----------------------------------------------------------------
+        -- python debugging
+        -- ----------------------------------------------------------------
+
+        dap.adapters.python = {
+            type = "executable",
+            command = vim.fn.stdpath('data') .. '/mason/bin/debugpy-adapter'
+        }
+        dap.configurations.python = {
+            {
+                justMyCode = true;
+                type = 'python';
+                request = 'launch';
+                name = 'Launch current file';
+                program = "${file}";
+                python = function()
+                    local venv = os.getenv("VIRTUAL_ENV")
+                    if venv then
+                        return venv .. "/bin/python3"
+                    end
+                    return "/usr/bin/python3"
+                end
+            },
+            -- template for exact file
+            -- {
+            --     justMyCode = true;
+            --     type = 'python';
+            --     request = 'launch';
+            --     name = 'Launch file.py';
+            --     program = "/path/to/file.py";
+            --     python = function()
+            --         return '/path/to/.venv/bin/python3'
+            --     end
+            -- },
+        }
+
+
     end,
 }
