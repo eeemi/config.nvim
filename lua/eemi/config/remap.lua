@@ -41,6 +41,7 @@ vim.keymap.set("n", "<leader>B", ':%bd|e#<CR>', { desc = 'Unload [B]uffers excep
 vim.keymap.set("n", "<C-W>>", '50<C-w>>', { desc = 'Increase width by 50'})
 vim.keymap.set("n", "<C-W><", '50<C-w><', { desc = 'Decrease width by 50'})
 vim.keymap.set("n", "<C-W>m", ':vert res ', { desc = '[m]odify width'})
+vim.keymap.set("n", "<C-W>M", ':res ', { desc = '[M]odify height'})
 
 -- GENERATION
 vim.keymap.set("n", "<leader>G", [[q:iput=range()->join(', ')<Esc>F)i<C-c>]], { desc = '[G]enerate sequence'})
