@@ -109,12 +109,14 @@ local chars = {
     ["["] = "]",
     ["{"] = "}",
 }
+
+-- FIXME: This is AI generated. Seemingly works but need to ensure correct functionality
 for first, last in pairs(chars) do
     vim.keymap.set("i", first, function()
         local line = vim.fn.getline(".")
         local col = vim.fn.col(".")
         -- If cursor is before a closing quote of the same type, skip it
-        -- BUG: possible bug
+        -- FIXME: possible bug
         -- Why does `first == last` pass the first if???
         if first == last and col <= #line and line:sub(col, col) == last then
             return "<Right>"
@@ -139,5 +141,4 @@ for first, last in pairs(chars) do
         end, { expr = true })
     end
 end
-
 
