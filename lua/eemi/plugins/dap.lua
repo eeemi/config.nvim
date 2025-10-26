@@ -79,7 +79,7 @@ return {
         local dapuiConfig = {
             controls = {
                 icons = {
-                    disconnect = " (C-F5)",
+                    disconnect = " (C-S-F5)",
                     pause = "",
                     play = " (F5)",
                     run_last = " (F9)",
@@ -87,7 +87,7 @@ return {
                     step_into = " (F8)",
                     step_out = " (F6)",
                     step_over = " (F7)",
-                    terminate = " (S-F5)"
+                    terminate = " (C-F5)",
                 }
             },
             mappings = {
@@ -124,14 +124,14 @@ return {
         vim.keymap.set('n', '<leader>Dt', function() dapui.toggle({}) end, {desc = "[t]oggle UI"})
         vim.keymap.set('n', '<leader>Ds', function() dap.continue() end, {desc = "[S]tart (F5)"})
         vim.keymap.set('n', '<F5>', function() dap.continue() end, {desc = "Start (F5)"})
-        vim.keymap.set('n', '<F17>', function() dap.terminate() end, {desc = "Terminate <S-F5>"})
+        vim.keymap.set('n', '<F29>', function() dap.terminate() end, {desc = "Terminate (C-F5)"})
         vim.keymap.set('n', '<F9>', function() dap.run_last() end)
         vim.keymap.set('n', '<F7>', function() dap.step_over() end)
         vim.keymap.set('n', '<F8>', function() dap.step_into() end)
         vim.keymap.set('n', '<F6>', function() dap.step_out() end)
         vim.keymap.set('n', '<F10>', function() dap.step_back() end) -- is this needed?
-        vim.keymap.set('n', '<F29>', function() dap.disconnect() end, {desc = "Disconnect (Ctrl+F5)"}) -- is this needed?
-        -- vim.keymap.set('n', '<F41>', function() dap.restart() end, {desc = "Restart (C-S-F5)"}) -- is this needed?
+        vim.keymap.set('n', '<F41>', function() dap.disconnect() end, {desc = "Disconnect (C-S-F5)"})
+        vim.keymap.set('n', '<F17>', function() dap.restart() end, {desc = "Restart (S-F5)"})
         vim.keymap.set('n', '<leader>b', function() dap.toggle_breakpoint() end, {desc = 'Toggle [b]reakpoint'})
         vim.keymap.set('n', '<leader>DB', function() dap.set_breakpoint() end, {desc = 'Set [B]reakpoint'})
         vim.keymap.set('n', '<leader>Dp', function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
