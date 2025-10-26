@@ -104,7 +104,7 @@ vim.keymap.set('i', [[`]], [[``<Left>]])
 local chars = {
     ['"'] = '"',
     -- ["'"] = "'",
-    ["`"] = "`",
+    -- ["`"] = "`",
     ["("] = ")",
     ["["] = "]",
     ["{"] = "}",
@@ -141,4 +141,27 @@ for first, last in pairs(chars) do
         end, { expr = true })
     end
 end
+
+-- CODE BLOCK
+
+-- FIXME: This is AI generated. Seemingly works but need to ensure correct functionality
+vim.keymap.set("i", "`", function()
+  local col = vim.fn.col(".")
+  local line = vim.fn.getline(".")
+  local before = line:sub(1, col - 1)
+  local after = line:sub(col)
+  -- count consecutive backticks immediately before cursor
+  local backticks_before = before:match("`+$")
+  local count = backticks_before and #backticks_before or 0
+  -- CASE 1: third consecutive backtick → insert fenced code block
+  if count == 2 then
+    return "<BS><BS>```<CR>```<Up>"
+  end
+  -- CASE 2: if cursor is just before an existing backtick, skip over it
+  if after:sub(1, 1) == "`" then
+    return "<Right>"
+  end
+  -- CASE 3: default → insert inline pair of backticks
+  return "``<Left>"
+end, { expr = true })
 
