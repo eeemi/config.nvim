@@ -382,7 +382,7 @@ return {
         }
         dap.configurations.python = {
             {
-                justMyCode = true;
+                justMyCode = false;
                 type = 'python';
                 request = 'launch';
                 name = 'Launch current file';
