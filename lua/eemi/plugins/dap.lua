@@ -392,7 +392,7 @@ return {
                     if venv then
                         return venv .. "/bin/python3"
                     end
-                    return "/usr/bin/python3"
+                    return "/usr/bin/env python3"
                 end
             },
             -- template for exact file
