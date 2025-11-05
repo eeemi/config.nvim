@@ -62,6 +62,7 @@ return {
                 -- map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
                 map('<leader>ca', vim.lsp.buf.code_action, '[c]ode [a]ction')
                 map('gD', vim.lsp.buf.declaration, '[g]oto [D]eclaration')
+                map('<leader>k', vim.lsp.buf.signature_help, 'signature help')
 
                 -- The following two autocommands are used to highlight references of the
                 -- word under your cursor when your cursor rests there for a little while.
