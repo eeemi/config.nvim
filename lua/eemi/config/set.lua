@@ -28,6 +28,8 @@ vim.opt.scrolloff = 12
 
 -- vim.opt.colorcolumn = "80"
 
+vim.opt.laststatus = 3 -- draw horizontal window separator line
+
 vim.api.nvim_create_autocmd('TextYankPost', {
     group = vim.api.nvim_create_augroup('highlight_yank', {}),
     desc = 'Highlight on yank',
