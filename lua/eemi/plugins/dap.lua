@@ -387,6 +387,7 @@ return {
                 request = 'launch';
                 name = 'Launch current file';
                 program = "${file}";
+                -- args = {""};
                 python = function()
                     local venv = os.getenv("VIRTUAL_ENV")
                     if venv then
@@ -402,6 +403,7 @@ return {
             --     request = 'launch';
             --     name = 'Launch file.py';
             --     program = "/path/to/file.py";
+            --     -- args = {""};
             --     python = function()
             --         return '/path/to/.venv/bin/python3'
             --     end
