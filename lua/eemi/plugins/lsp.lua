@@ -12,6 +12,11 @@ return {
         -- notifications
         "j-hui/fidget.nvim",
 
+        {
+            "ray-x/lsp_signature.nvim",
+            event = "InsertEnter",
+        },
+
         -- blink
         dependencies = { 'saghen/blink.cmp' },
     },
@@ -103,6 +108,26 @@ return {
                     --     end, '[T]oggle Inlay [H]ints')
                     -- end
                 end,
+            })
+
+            -- ----------------------------------------------------------------
+            -- lsp_signature
+            -- ----------------------------------------------------------------
+
+            require'lsp_signature'.setup({
+                bind = true,
+                hint_prefix = {
+                    above = "↙ ",  -- when the hint is on the line above the current line
+                    current = "← ",  -- when the hint is on the same line
+                    below = "↖ "  -- when the hint is on the line below the current line
+                },
+                timer_interval = 50, -- default (200) timer check interval set to lower value if you want to reduce latency
+                -- doc_lines = 10, -- will show two lines of comment/doc(if there are more than two lines in doc, will be truncated);
+                --                 -- set to 0 if you DO NOT want any API comments be shown
+                --                 -- This setting only take effect in insert mode, it does not affect signature help in normal
+                --                 -- mode, 10 by default
+                -- max_height = 12, -- max height of signature floating_window, if content is more than max_height, you can scroll down
+                --                  -- to view the hiding contents
             })
 
             -- ----------------------------------------------------------------
