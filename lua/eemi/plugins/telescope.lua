@@ -55,7 +55,8 @@ config = function()
     vim.keymap.set('n', '<leader>fs', builtin.lsp_document_symbols, { desc = 'Telescope [s]ymbols' })
     vim.keymap.set('n', '<leader>fS', builtin.lsp_workspace_symbols, { desc = 'Telescope workspace [S]ymbols' })
     vim.keymap.set('n', '<leader>fD', builtin.lsp_dynamic_workspace_symbols, { desc = 'Telescope [D]ynamic workspace symbols' })
-    vim.keymap.set('n', '<leader>ft', [[:TodoTelescope<CR>]], { desc = 'Telescope [T]odo list' })
+    vim.keymap.set('n', '<leader>ft', [[:TodoTelescope<CR>]], { desc = 'Telescope [t]odo list (all)' })
+    vim.keymap.set('n', '<leader>fT', [[:TodoTelescope keywords=TODO,FIX,FIXME,BUG,FIXIT,ISSUE<CR>]], { desc = 'Telescope [T]odo list' })
     vim.keymap.set('n', '<leader>fm', builtin.man_pages, { desc = 'Telescope [m]an pages' })
 
     end,
