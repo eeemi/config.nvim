@@ -43,6 +43,11 @@ vim.keymap.set("n", "<C-W><", '50<C-w><', { desc = 'Decrease width by 50'})
 vim.keymap.set("n", "<C-W>m", ':vert res ', { desc = '[m]odify width'})
 vim.keymap.set("n", "<C-W>M", ':res ', { desc = '[M]odify height'})
 
+vim.keymap.set("n", "<S-Right>", ':vert res +10<CR>', { desc = 'Increase width by 10', silent = true })
+vim.keymap.set("n", "<S-Left>", ':vert res -10<CR>', { desc = 'Decrease width by 10', silent = true })
+vim.keymap.set("n", "<S-Down>", ':res +5<CR>', { desc = 'Increase height by 5', silent = true })
+vim.keymap.set("n", "<S-Up>", ':res -5<CR>', { desc = 'Decrease height by 5', silent = true })
+
 -- GENERATION
 vim.keymap.set("n", "<leader>G", [[q:iput=range()->join(', ')<Esc>F)i<C-c>]], { desc = '[G]enerate sequence'})
 -- vim.keymap.set("n", "<leader>G", [[:put=range()->join(', ')]], { desc = '[G]enerate sequence'}) -- use this with vscode emulation instead
