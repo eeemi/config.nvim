@@ -60,3 +60,108 @@ vim.keymap.set('n', 'grn', vim.lsp.buf.rename, {desc = "Re[N]ame"}) -- NOTE: can
 -- vim.keymap.set('n', 'gra', vim.lsp.buf.code_action, {desc = "Code [A]ction"})
 -- vim.keymap.set('n', 'grr', vim.lsp.buf.references, {desc = "[R]eferences"})
 
+-- AUTO DELETION
+--
+-- EXAMPLE: 
+-- If in insert mode between quotation marks `""`, 
+-- pressing back space removes both characters.
+--
+vim.keymap.set('i', '<BS>', function ()
+    local line = vim.fn.getline(".")
+    local col = vim.fn.col(".")
+    if 1 < col and col <= #line then
+        local pair = line:sub(col-1, col)
+        if
+            pair == [[""]] or
+            pair == [['']] or
+            pair == [[``]] or
+            pair == [[<>]] or
+            pair == [[()]] or
+            pair == [[{}]] or
+            pair == '[]'
+            then
+                return [[<Del><BS>]]
+            end
+        end
+        return [[<BS>]]
+    end, { expr = true }
+)
+
+-- NOTE: 
+-- ====================================================================================
+-- everything after this line should be at the bottom in this file, in this order
+-- ====================================================================================
+
+-- AUTOCOMPLETE
+vim.keymap.set('i', '(', '()<Left>')
+vim.keymap.set('i', '[', '[]<Left>')
+vim.keymap.set('i', '{', '{}<Left>')
+-- vim.keymap.set('i', [[']], [[''<Left>]])
+vim.keymap.set('i', [["]], [[""<Left>]])
+vim.keymap.set('i', [[`]], [[``<Left>]])
+
+-- AUTOSKIP 
+local chars = {
+    ['"'] = '"',
+    -- ["'"] = "'",
+    -- ["`"] = "`",
+    ["("] = ")",
+    ["["] = "]",
+    ["{"] = "}",
+}
+
+-- FIXME: This is AI generated. Seemingly works but need to ensure correct functionality
+for first, last in pairs(chars) do
+    vim.keymap.set("i", first, function()
+        local line = vim.fn.getline(".")
+        local col = vim.fn.col(".")
+        -- If cursor is before a closing quote of the same type, skip it
+        -- FIXME: possible bug
+        -- Why does `first == last` pass the first if???
+        if first == last and col <= #line and line:sub(col, col) == last then
+            return "<Right>"
+        end
+        -- If it's a quote, insert both
+        if first == last then
+            return first .. last .. "<Left>"
+        end
+        -- Otherwise (brackets/braces/parens), insert first+last
+        return first .. last .. "<Left>"
+    end, { expr = true })
+    -- For asymmetric pairs (brackets/braces/parens), add skip logic
+    if first ~= last then
+        vim.keymap.set("i", last, function()
+            local col = vim.fn.col(".")
+            local line = vim.fn.getline(".")
+            if col <= #line and line:sub(col, col) == last then
+                return "<Right>"
+            else
+                return last
+            end
+        end, { expr = true })
+    end
+end
+
+-- CODE BLOCK
+
+-- FIXME: This is AI generated. Seemingly works but need to ensure correct functionality
+vim.keymap.set("i", "`", function()
+  local col = vim.fn.col(".")
+  local line = vim.fn.getline(".")
+  local before = line:sub(1, col - 1)
+  local after = line:sub(col)
+  -- count consecutive backticks immediately before cursor
+  local backticks_before = before:match("`+$")
+  local count = backticks_before and #backticks_before or 0
+  -- CASE 1: third consecutive backtick → insert fenced code block
+  if count == 2 then
+    return "<BS><BS>```<CR>```<Up>"
+  end
+  -- CASE 2: if cursor is just before an existing backtick, skip over it
+  if after:sub(1, 1) == "`" then
+    return "<Right>"
+  end
+  -- CASE 3: default → insert inline pair of backticks
+  return "``<Left>"
+end, { expr = true })
+
