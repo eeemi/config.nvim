@@ -38,8 +38,23 @@ return {
         },
         {
             "<leader>tt",
+            "<cmd>Trouble todo filter = {buf = 0}<cr>",
+            desc = "Buffer [t]odo (all) (Trouble)",
+        },
+        {
+            "<leader>tT",
+            "<cmd>Trouble todo filter = {buf = 0, tag = {TODO,FIX,FIXME,BUG,FIXIT,ISSUE}}<cr>",
+            desc = "Buffer [T]odo       (Trouble)",
+        },
+        {
+            "<leader>ta",
             "<cmd>Trouble todo<cr>",
-            desc = "Todo list (Trouble)",
-        }
+            desc = "Todo (all) (Trouble)",
+        },
+        {
+            "<leader>tA",
+            "<cmd>Trouble todo filter = {tag = {TODO,FIX,FIXME,BUG,FIXIT,ISSUE}}<cr>",
+            desc = "Todo       (Trouble)",
+        },
     },
 }
