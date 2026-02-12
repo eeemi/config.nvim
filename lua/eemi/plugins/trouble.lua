@@ -1,6 +1,9 @@
 return {
     "folke/trouble.nvim",
-    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    opts = {
+        warn_no_results = false, -- disable no results warning 
+        open_no_results = true, -- open window even if no results
+    }, -- for default options, refer to the configuration section for custom setup.
     cmd = "Trouble",
     keys = {
         {
