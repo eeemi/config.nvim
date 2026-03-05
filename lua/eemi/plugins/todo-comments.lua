@@ -14,10 +14,10 @@ return {
         end, { desc = "Next [T]odo comment" }),
         vim.keymap.set("n", "[t", function()
             require("todo-comments").jump_prev()
-        end, { desc = "Previous [t]odo comment" }),
-        vim.keymap.set("n", "]T", function()
+        end, { desc = "Previous [t]odo comment (all)" }),
+        vim.keymap.set("n", "[T", function()
             require("todo-comments").jump_prev({keywords = {"TODO","FIX","FIXME","BUG","FIXIT","ISSUE"}})
-        end, { desc = "Previous [T]odo comment (all)" })
+        end, { desc = "Previous [T]odo comment" })
 
     },
 }
