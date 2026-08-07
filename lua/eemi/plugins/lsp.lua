@@ -139,7 +139,7 @@ return {
                 ensure_installed = {
                     "lua_ls",
                     "gopls",
-                    "pyright",
+                    -- "pyright",
                 },
                 handlers = {
                     -- The first entry (without a key) will be the default handler
