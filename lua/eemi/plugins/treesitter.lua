@@ -3,10 +3,11 @@ return {
     lazy = false,
     build = ":TSUpdate",
     branch = "main",
+    dependencies = { "williamboman/mason.nvim" },
     config = function ()
 
         -- NOTE: supported languages: `~/.local/share/nvim/lazy/nvim-treesitter/SUPPORTED_LANGUAGES.md`
-        require("nvim-treesitter").install {
+        local languages = {
             "c",
             "lua",
             "vim",
@@ -23,6 +24,20 @@ return {
             "gitcommit",
             "gitignore",
         }
+
+        -- nvim-treesitter (main) compiles parsers with the `tree-sitter` CLI
+        if vim.fn.executable("tree-sitter") == 1 then
+            require("nvim-treesitter").install(languages)
+        else
+            require("mason").setup() -- NOTE: puts mason's bin dir on PATH
+            local registry = require("mason-registry")
+            registry.refresh(function()
+                local pkg = registry.get_package("tree-sitter-cli")
+                pkg:install():once("closed", vim.schedule_wrap(function()
+                    require("nvim-treesitter").install(languages)
+                end))
+            end)
+        end
 
         vim.api.nvim_create_autocmd("FileType", {
             group = vim.api.nvim_create_augroup("treesitter-highlight", { clear = true }),
