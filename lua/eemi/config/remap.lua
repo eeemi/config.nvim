@@ -51,6 +51,7 @@ vim.keymap.set("n", "<S-Up>", ':res -5<CR>', { desc = 'Decrease height by 5', si
 -- GENERATION
 vim.keymap.set("n", "<leader>G", [[q:iput=range()->join(', ')<Esc>F)i<C-c>]], { desc = '[G]enerate sequence'})
 -- vim.keymap.set("n", "<leader>G", [[:put=range()->join(', ')]], { desc = '[G]enerate sequence'}) -- use this with vscode emulation instead
+vim.keymap.set('i', '<C-d>', function() return os.date('%Y-%m-%d') end, { expr = true, desc = 'Insert [d]ate (yyyy-mm-dd)' }) -- NOTE: overrides insert-mode <C-d>
 
 -- RENAME
 vim.keymap.set('n', '<leader>r', '*Ncgn', {desc = "[R]ename word, '.' to repeat for next"})
