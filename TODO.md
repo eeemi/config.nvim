@@ -23,5 +23,5 @@
     - [ ] persistent breakpoints
 - [x] support for c++ debugging
     - [ ] make configuration for c++ debuggers simpler
-- [ ] `<leader>r` keymap in visual mode doesn't work with some characters
+- [x] `<leader>r` keymap in visual mode doesn't work with some characters
 - [ ] make a minimal version of the current setup

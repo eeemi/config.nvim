@@ -55,7 +55,7 @@ vim.keymap.set('i', '<C-d>', function() return os.date('%Y-%m-%d') end, { expr =
 
 -- RENAME
 vim.keymap.set('n', '<leader>r', '*Ncgn', {desc = "[R]ename word, '.' to repeat for next"})
-vim.keymap.set('x', '<leader>r', [[y/<C-r>"<CR>Ncgn]], {desc = "[R]ename word, '.' to repeat for next"}) -- TODO: better way to do it? update <pattern> inline?
+vim.keymap.set('x', '<leader>r', [[y/\V<C-r>=substitute(escape(@", '/\'), '\n', '\\n', 'g')<CR><CR>Ncgn]], {desc = "[R]ename word, '.' to repeat for next"}) -- TODO: better way to do it? update <pattern> inline?
 vim.keymap.set('n', '<leader>R', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace current word in the whole file' })
 vim.keymap.set('n', 'grn', vim.lsp.buf.rename, {desc = "Re[N]ame"}) -- NOTE: can have big impact
 -- vim.keymap.set('n', 'gra', vim.lsp.buf.code_action, {desc = "Code [A]ction"})
